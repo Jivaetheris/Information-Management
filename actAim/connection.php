@@ -22,7 +22,7 @@ $sqlUserTable = "CREATE TABLE IF NOT EXISTS user (
     firstName VARCHAR(30) NOT NULL,
     lastName VARCHAR(30) NOT NULL,
     contactNumber VARCHAR(15) NOT NULL,
-    username VARCHAR(15) NOT NULL UNIQUE,
+    username VARCHAR(11) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL
 )";
 if ($conn->query($sqlUserTable) !== TRUE) {

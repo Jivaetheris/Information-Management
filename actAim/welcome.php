@@ -1,7 +1,7 @@
 <?php 
 session_start();
 include 'connection.php';
-
+$_SESSION['username'];
 if (!isset($_SESSION['username'])) {
     header("Location: login.php");
     exit();
@@ -38,11 +38,16 @@ $query->close();
             $newFirstName = $_POST['fname'];
             $newLastName = $_POST['lname'];
             $newContact = $_POST['contactNumber'];
-            $update_sql = "UPDATE user SET firstName='$newFirstName', lastName='$newLastName', contactNumber='$newContact' WHERE id=$userID";
-            $conn->query($update_sql);
-            echo "User Updaed!<br>";
-            header("location: ". $_SERVER['PHP_SELF']);
-            exit();
+
+            if (preg_match('/^\d{11}$/', $newContact)) {
+                $update_sql = "UPDATE user SET firstName='$newFirstName', lastName='$newLastName', contactNumber='$newContact' WHERE id=$userID";
+                $conn->query($update_sql);
+                echo "User Updated!<br>";
+                header("location: ". $_SERVER['PHP_SELF']);
+                exit();
+            } else {
+                echo "<script>alert('Contact number must be exactly 11 digits.');</script>";
+            }
         }
     }
 ?>

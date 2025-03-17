@@ -1,5 +1,3 @@
-/* styles.css */
-
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f4f6f9;
@@ -15,7 +13,9 @@ h1 {
 }
 
 table {
-  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
   border-collapse: collapse;
   background-color: #fff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -85,12 +85,16 @@ button.insertButton:hover {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
-  display: flex;
+  display: absolute;
   justify-content: center;
   align-items: center;
 }
 
 #editForm {
+  margin-top: 200px;
+  width: 10%;
+  margin-left: 45%;
+  margin-right: 10%;
   background-color: #fff;
   padding: 25px 30px;
   border-radius: 8px;
@@ -98,7 +102,8 @@ button.insertButton:hover {
 }
 
 #editForm input {
-  width: 100%;
+  width: auto;
+  margin-left: 90px;
   padding: 10px;
   margin: 8px 0;
   border: 1px solid #ccc;
